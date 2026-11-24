@@ -569,7 +569,7 @@ def main() -> int:
         "index.html", "search.html", "contents.html", "index-a-z.html",
         "glossary.html", "bibliography.html", "quotes.html", "objections.html",
         "systems.html", "theorems.html", "categories.html", "about.html",
-        "build-report.html", "BUILD-REPORT.md", "README.md", "404.html",
+        "build-report.html", "BUILD-REPORT.md", "404.html",
     ]:
         p = OUT / name
         if p.exists():
