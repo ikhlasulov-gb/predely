@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "Если вы используете этот материал, цитируйте книгу по указанным данным."
+title: "О неполноте достаточно сложных формальных систем и пределах имманентного обоснования"
+authors:
+  - family-names: "Викулов"
+    given-names: "Ихлас Сергеевич"
+date-released: 2026-11-24
+doi: "10.5281/zenodo.24498693"
+url: "https://ikhlasulov-gb.github.io/predely/"
+license: CC-BY-NC-ND-4.0
