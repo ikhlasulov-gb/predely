@@ -39,9 +39,7 @@ def sentence_html(
     )
     return (
         f'<span class="thesis" id="{sentence.anchor}" '
-        f'data-thesis-number="{sentence.number}">{inner}'
-        f'<a class="thesis-permalink" href="#{sentence.anchor}" '
-        f'aria-label="Постоянная ссылка на тезис" title="Ссылка на тезис">¶</a></span>'
+        f'data-thesis-number="{sentence.number}">{inner}</span>'
     )
 
 
@@ -92,7 +90,6 @@ def render_list(
         items_html.append(
             f'<li id="{item["anchor"]}" data-item-number="{item["number"]}">'
             + " ".join(spans)
-            + block_permalink(item["anchor"])
             + "</li>"
         )
     return (
@@ -154,7 +151,6 @@ def render_paragraph(
         f'<p class="{" ".join(classes)}" id="{block.anchor}" '
         f'data-para-number="{block.number}">'
         + " ".join(spans)
-        + block_permalink(block.anchor)
         + "</p>"
     )
 

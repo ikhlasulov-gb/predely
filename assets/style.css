@@ -241,7 +241,9 @@ mark {
 }
 .search-form input[type="search"]::placeholder { color: var(--text-faint); }
 .search-form input[type="search"]:focus,
-.search-form input[type="search"]:focus-visible {
+.search-form input[type="search"]:focus-visible,
+input[type="search"]:focus,
+input[type="search"]:focus-visible {
   outline: none;
   box-shadow: none;
   border-color: var(--border);
