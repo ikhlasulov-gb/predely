@@ -6,6 +6,8 @@
   --bg: #ffffff;
   --bg-subtle: #f8f9fa;
   --bg-elevated: #ffffff;
+  --bg-header: #f4f6f8;
+  --bg-input: #eef2f5;
   --text: #202122;
   --text-muted: #54595d;
   --text-faint: #72777d;
@@ -39,6 +41,8 @@ html[data-theme="dark"] {
   --bg: #101418;
   --bg-subtle: #181d23;
   --bg-elevated: #181d23;
+  --bg-header: #161b21;
+  --bg-input: #1d242c;
   --text: #eaecf0;
   --text-muted: #a2a9b1;
   --text-faint: #8a939c;
@@ -60,6 +64,8 @@ html[data-theme="dark"] {
     --bg: #101418;
     --bg-subtle: #181d23;
     --bg-elevated: #181d23;
+    --bg-header: #161b21;
+    --bg-input: #1d242c;
     --text: #eaecf0;
     --text-muted: #a2a9b1;
     --text-faint: #8a939c;
@@ -158,7 +164,7 @@ mark {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: var(--bg);
+  background: var(--bg-header);
   border-bottom: 1px solid var(--border-subtle);
 }
 
@@ -237,7 +243,7 @@ mark {
   border: 1px solid var(--border);
   border-right: 0;
   border-radius: 0;
-  background: var(--bg);
+  background: var(--bg-input);
   color: var(--text);
   font-family: var(--font-sans);
   font-size: .85rem;
@@ -1124,7 +1130,7 @@ body.sources-mode .toc-box a[href="#text"] { display: none; }
   max-width: 100%;
   padding: .38rem .55rem;
   border: 1px solid var(--border);
-  background: var(--bg);
+  background: var(--bg-input);
   color: var(--text);
   font-family: var(--font-sans);
   font-size: .82rem;
