@@ -113,6 +113,16 @@ def page_shell(
 </header>
 <div class="page-layout">
   <aside class="sidebar" id="sidebar" aria-label="Навигация">
+    <div class="mobile-menu-head">
+      <span class="mobile-menu-title">Меню</span>
+      <button class="icon-button mobile-menu-close" type="button"
+              data-menu-close aria-label="Закрыть меню">
+        <svg viewBox="0 0 20 20" width="18" height="18" aria-hidden="true" focusable="false">
+          <path d="M4 4l12 12M16 4L4 16" fill="none" stroke="currentColor"
+                stroke-width="1.7" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
     {sidebar_nav(root, active)}
     {sidebar_extra}
   </aside>

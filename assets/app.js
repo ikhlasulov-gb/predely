@@ -84,6 +84,10 @@
       document.body.classList.toggle("menu-open", open);
       menuButton.setAttribute("aria-expanded", open ? "true" : "false");
       menuButton.setAttribute("aria-label", open ? "Закрыть меню" : "Открыть меню");
+      if (open) {
+        var closeButton = sidebar.querySelector("[data-menu-close]");
+        if (closeButton) closeButton.focus();
+      }
     });
     document.addEventListener("click", function (event) {
       if (!sidebar.classList.contains("open")) return;
@@ -92,6 +96,9 @@
     });
     sidebar.addEventListener("click", function (event) {
       if (event.target.closest("a")) closeMenu();
+    });
+    document.querySelectorAll("[data-menu-close]").forEach(function (button) {
+      button.addEventListener("click", closeMenu);
     });
   }
 
