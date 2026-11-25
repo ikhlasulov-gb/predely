@@ -1291,12 +1291,11 @@ html[data-theme="dark"] .badge-hadith { background: #2d291d; border-color: #6f62
 .imprint { color: var(--text-muted); font-size: .88rem; }
 .citation-text { font-size: .9rem; line-height: 1.6; }
 .basmala {
-  font-family: "Amiri", "Noto Naskh Arabic", "Scheherazade New", "DejaVu Sans", serif;
-  font-size: 2.4rem;
-  line-height: 1.4;
-  text-align: center;
-  margin: 1.2rem 0 1.6rem;
+  width: min(100%, 28rem);
+  margin: 1.2rem auto 1.6rem;
+  color: var(--text);
 }
+.basmala svg { display: block; width: 100%; height: auto; }
 .warn-list { font-size: .82rem; }
 .error { color: var(--danger); }
 

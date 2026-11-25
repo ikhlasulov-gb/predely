@@ -6,6 +6,7 @@ from __future__ import annotations
 import html
 import re
 from collections import defaultdict
+from pathlib import Path
 from typing import Any, Iterable
 
 from . import config
@@ -25,6 +26,8 @@ from .render import (
     render_table,
 )
 from .texparse import Section, Term, html_to_text
+
+_BASMALA_SVG = (Path(__file__).resolve().parent / "assets" / "basmala.svg").read_text(encoding="utf-8")
 
 
 # ---------------------------------------------------------------------------
@@ -944,7 +947,7 @@ def render_about(site: Site) -> str:
           <tr><th>Лицензия текста</th><td><a href="{config.LICENSE_URL}">{esc(config.LICENSE)}</a></td></tr>
         </table>
       </section>
-      <div class="basmala" lang="ar" dir="rtl" aria-label="Басмала">﷽</div>
+      <div class="basmala" role="img" aria-label="Басмала">{_BASMALA_SVG}</div>
       <section class="article-section">
         <h2>Аннотация</h2>
         {abstract}
