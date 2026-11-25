@@ -29,18 +29,24 @@
   /* ------------------------------------------------------------------ */
 
   var themeButton = document.getElementById("theme-toggle");
-  var themeOrder = ["auto", "light", "dark"];
-  var themeLabels = {
-    auto: "Тема: как в системе",
-    light: "Тема: светлая",
-    dark: "Тема: тёмная"
-  };
+  var systemDark = window.matchMedia
+    ? window.matchMedia("(prefers-color-scheme: dark)")
+    : null;
+
+  function effectiveTheme(theme) {
+    if (theme === "light" || theme === "dark") return theme;
+    return systemDark && systemDark.matches ? "dark" : "light";
+  }
 
   function applyTheme(theme) {
     html.dataset.theme = theme;
+    var effective = effectiveTheme(theme);
+    var nextLabel = effective === "dark"
+      ? "Включить светлую тему"
+      : "Включить тёмную тему";
     if (themeButton) {
-      themeButton.title = themeLabels[theme] || themeLabels.auto;
-      themeButton.setAttribute("aria-label", (themeLabels[theme] || "Тема") + ". Переключить");
+      themeButton.title = nextLabel;
+      themeButton.setAttribute("aria-label", nextLabel);
     }
   }
 
@@ -48,16 +54,27 @@
   try {
     storedTheme = localStorage.getItem("site-theme") || "auto";
   } catch (e) { /* localStorage может быть недоступен */ }
-  if (themeOrder.indexOf(storedTheme) < 0) storedTheme = "auto";
+  if (storedTheme !== "light" && storedTheme !== "dark" && storedTheme !== "auto") {
+    storedTheme = "auto";
+  }
   applyTheme(storedTheme);
 
   if (themeButton) {
     themeButton.addEventListener("click", function () {
-      var current = html.dataset.theme || "auto";
-      var next = themeOrder[(themeOrder.indexOf(current) + 1) % themeOrder.length];
+      var next = effectiveTheme(html.dataset.theme || "auto") === "dark"
+        ? "light"
+        : "dark";
       try { localStorage.setItem("site-theme", next); } catch (e) {}
       applyTheme(next);
     });
+  }
+
+  if (systemDark) {
+    var onSchemeChange = function () {
+      if ((html.dataset.theme || "auto") === "auto") applyTheme("auto");
+    };
+    if (systemDark.addEventListener) systemDark.addEventListener("change", onSchemeChange);
+    else if (systemDark.addListener) systemDark.addListener(onSchemeChange);
   }
 
   /* ------------------------------------------------------------------ */
