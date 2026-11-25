@@ -71,7 +71,10 @@
     if (!sidebar) return;
     sidebar.classList.remove("open");
     document.body.classList.remove("menu-open");
-    if (menuButton) menuButton.setAttribute("aria-expanded", "false");
+    if (menuButton) {
+      menuButton.setAttribute("aria-expanded", "false");
+      menuButton.setAttribute("aria-label", "Открыть меню");
+    }
   }
 
   if (menuButton && sidebar) {
@@ -80,6 +83,7 @@
       var open = sidebar.classList.toggle("open");
       document.body.classList.toggle("menu-open", open);
       menuButton.setAttribute("aria-expanded", open ? "true" : "false");
+      menuButton.setAttribute("aria-label", open ? "Закрыть меню" : "Открыть меню");
     });
     document.addEventListener("click", function (event) {
       if (!sidebar.classList.contains("open")) return;

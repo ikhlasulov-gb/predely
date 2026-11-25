@@ -202,6 +202,7 @@ mark {
 
 .icon-button {
   display: inline-grid;
+  flex: none;
   place-items: center;
   width: 2rem;
   height: 2rem;
@@ -214,6 +215,9 @@ mark {
   cursor: pointer;
 }
 .icon-button svg { display: block; }
+.menu-toggle .icon-close { display: none; }
+.menu-toggle[aria-expanded="true"] .icon-burger { display: none; }
+.menu-toggle[aria-expanded="true"] .icon-close { display: block; }
 .theme-toggle { margin-left: 0; }
 .icon-button:hover { border-color: var(--border-subtle); background: var(--bg-subtle); }
 .menu-toggle { display: none; }
@@ -1450,6 +1454,7 @@ html[data-theme="dark"] .badge-hadith { background: #2d291d; border-color: #6f62
 }
 
 @media (max-width: 620px) {
+  .theme-toggle { margin-left: auto; }
   .sidebar { top: 5.35rem; }
   body.menu-open::before { inset: 5.35rem 0 0; }
   .header-inner { gap: .45rem; padding: .4rem .7rem; flex-wrap: wrap; }
@@ -1473,6 +1478,15 @@ html[data-theme="dark"] .badge-hadith { background: #2d291d; border-color: #6f62
   .stat-num { font-size: 1.35rem; }
   .contents-list li { gap: .55rem; }
   .infobox { font-size: .74rem; }
+}
+
+@media (max-width: 380px) {
+  .sidebar { top: 4.92rem; }
+  body.menu-open::before { inset: 4.92rem 0 0; }
+  .header-inner { gap: .25rem; padding: .35rem .5rem; }
+  .logo-text { font-size: .82rem; }
+  .logo-mark { width: 1.8rem; height: 1.8rem; font-size: 1rem; }
+  .icon-button { width: 1.9rem; height: 1.9rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {
