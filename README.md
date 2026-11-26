@@ -15,12 +15,16 @@
 
 ## Сборка
 
-Генератор читает `book.tex` из пути, указанного в `_build/config.py`,
-и пересобирает статьи, словарь, поисковый индекс и основные страницы:
+Генератор читает `book.tex` из пути, заданного переменной окружения
+`PREDELY_SOURCE_FILE` (по умолчанию — `source/book.tex`), и пересобирает
+статьи, словарь, поисковый индекс и основные страницы:
 
 ```bash
-python3 -m _build.build
+PREDELY_SOURCE_FILE=/path/to/book.tex python3 -m _build.build
 ```
+
+Также можно задать `PREDELY_COVER_FILE`, `PREDELY_COVER_JSON` и
+`PREDELY_PDF_FILE`.
 
 Локальный просмотр:
 

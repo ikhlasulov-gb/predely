@@ -3,6 +3,9 @@
 
 from __future__ import annotations
 
+import os
+from pathlib import Path
+
 SITE_TITLE = "Пределы обоснования"
 SITE_SUBTITLE = "Энциклопедия по книге Ихласа Викулова"
 SITE_DESCRIPTION = (
@@ -20,10 +23,22 @@ BOOK_DATE = "24 ноября 2026 г."
 PUBLISHER = "математика"
 LICENSE = "CC BY-NC-ND 4.0"
 LICENSE_URL = "https://creativecommons.org/licenses/by-nc-nd/4.0/deed.ru"
-SOURCE_FILE = "book.tex"
-COVER_FILE = "cover.png"
-COVER_JSON = "cover.json"
-PDF_FILE = "book.pdf"
+# Пути к исходникам книги не входят в репозиторий. Для локальной сборки
+# задайте переменные окружения или измените значения по умолчанию.
+ROOT = Path(__file__).resolve().parent.parent
+
+
+def _source_path(variable: str, default: Path) -> Path:
+    value = os.environ.get(variable)
+    return Path(value) if value else default
+
+
+SOURCE_FILE = _source_path("PREDELY_SOURCE_FILE", ROOT / "source" / "book.tex")
+COVER_FILE = _source_path("PREDELY_COVER_FILE", ROOT / "source" / "cover.png")
+COVER_JSON = _source_path("PREDELY_COVER_JSON", ROOT / "source" / "cover.json")
+PDF_FILE = _source_path(
+    "PREDELY_PDF_FILE", ROOT / "build" / "predely-obosnovaniya.pdf"
+)
 PDF_NAME = "predely-obosnovaniya.pdf"
 DOI_URL = "https://doi.org/10.5281/zenodo.24498693"
 CITATION_TITLE = "О неполноте достаточно сложных формальных систем и пределах имманентного обоснования"

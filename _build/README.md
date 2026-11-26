@@ -21,9 +21,10 @@
 
     python3 -m _build.build
 
-Сборщик читает `book.tex` из исходного каталога книги, указанного в
-`_build/config.py`, и перезаписывает `articles/`, `terms/`, `assets/` и
-основные страницы.
+Сборщик читает `book.tex` из пути, заданного переменной окружения
+`PREDELY_SOURCE_FILE` (по умолчанию — `source/book.tex`), и перезаписывает
+`articles/`, `terms/`, `assets/` и основные страницы. Дополнительно можно
+задать `PREDELY_COVER_FILE`, `PREDELY_COVER_JSON` и `PREDELY_PDF_FILE`.
 
 ## Что внутри
 
