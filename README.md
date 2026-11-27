@@ -1,8 +1,26 @@
-# Пределы обоснования
+<p align="center">
+  <img src="assets/favicon.svg" alt="Пределы обоснования" width="120"/>
+</p>
 
-Статическая энциклопедия по книге Викулова И. С. «О неполноте достаточно сложных формальных систем и пределах имманентного обоснования».
+<h1 align="center">Пределы обоснования</h1>
 
-**Сайт:** https://ikhlasulov.github.io/predely/
+<p align="center">
+  Статическая энциклопедия по книге Викулова И. С.<br>
+  «О неполноте достаточно сложных формальных систем и пределах имманентного обоснования».
+</p>
+
+<p align="center">
+  <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/"><img src="https://img.shields.io/badge/License-CC%20BY--NC--ND%204.0-lightgrey.svg" alt="License: CC BY-NC-ND 4.0"/></a>
+  <a href="https://www.python.org/"><img src="https://img.shields.io/badge/Python-3-3776AB?logo=python&amp;logoColor=white" alt="Python 3"/></a>
+  <a href="https://pages.github.com/"><img src="https://img.shields.io/badge/GitHub%20Pages-live-222222?logo=githubpages&amp;logoColor=white" alt="GitHub Pages"/></a>
+  <a href="https://doi.org/10.5281/zenodo.24498693"><img src="https://img.shields.io/badge/DOI-10.5281%2Fzenodo.24498693-blue" alt="DOI"/></a>
+</p>
+
+<p align="center"><strong>Сайт:</strong> <a href="https://ikhlasulov.github.io/predely/">ikhlasulov.github.io/predely</a></p>
+
+<p align="center">
+  <img src="assets/img/cover.webp" alt="Обложка книги «Пределы обоснования»" width="260"/>
+</p>
 
 ## Что в репозитории
 
